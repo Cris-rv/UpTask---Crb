@@ -13,7 +13,7 @@
     async function obtenerTareas() {
         try {
             const id = obtenerProyecto();
-            const url = `${location.origin}/api/tareas?id=${id}`
+            const url = `/api/tareas?id=${id}`
             const respuesta = await fetch(url);
             const resultado = await respuesta.json();
 
