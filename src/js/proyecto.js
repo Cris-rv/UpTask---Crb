@@ -52,7 +52,7 @@
         datos.append('urlProyecto', urlproyecto);
 
         try {
-            const url = 'http://localhost:3000/api/proyecto/eliminar';
+            const url = `${location.origin}/api/proyecto/eliminar`;
 
             const respuesta = await fetch(url, {
                 method: 'POST',
