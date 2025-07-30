@@ -20,7 +20,9 @@ class Router
     public function comprobarRutas()
     {
 
-        $currentUrl = $_SERVER['PATH_INFO'] ?? '/';
+        $currentUrl = strtok($_SERVER['REQUEST_URI'], '?') ?? '/';
+        $basePath = '/www/UpTask---Crb/public/'; // Cambia según la URL base
+        $currentUrl = str_replace($basePath, '', $currentUrl);
         $method = $_SERVER['REQUEST_METHOD'];
 
         if ($method === 'GET') { // Comparamos la url actual con la que le pasamos desde index si es igual se guarda la funcion sino es null y retorna pagina no encontrada
