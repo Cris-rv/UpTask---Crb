@@ -1,0 +1,44 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+@use 'sass:color';
+
+.dashboard {
+    background-color: color.adjust($grisClaro, $lightness: -10%);
+
+    @include tablet {
+        display: flex;
+        height: 100vh;
+    }
+
+    .principal {
+        flex: 1;
+        overflow: scroll;
+    }
+
+    .contenido {
+        padding: 2rem;
+        .nombre-pagina {
+            text-align: center;
+            font-size: 2.8rem;
+        }
+    }
+
+    .formulario {
+        input:not([type="submit"]) {
+            background-color: $blanco;
+        }
+
+        input[type="submit"] {
+            font-weight: bold;
+            font-size: 1.4rem;
+            @include boton($indigo, $blanco);
+        }
+    }
+
+    .enlace {
+        color: $indigo;
+        &:hover {
+            color: color.adjust($indigo, $lightness: -20%);
+        }
+    }
+}

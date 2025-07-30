@@ -1,0 +1,29 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+@use 'sass:color';
+
+.formulario {
+    margin-top: 5rem;
+    .campo {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 1.8rem;
+        margin-left: 1rem;
+
+        label {
+            flex: 0 0 15rem;
+            max-width: 100%;
+            margin-bottom: 1rem;
+        }
+        input {
+            flex: 1 1 auto; // Flexibilidad
+            min-width: 0; // Muy importante para evitar que se salga
+            width: 100%; // Adicional si necesitas ajuste
+            border: none;
+            padding: 1rem;
+            border-radius: 1rem;
+            background-color: color.adjust($gris, $lightness: 40%);
+        }
+    }
+}

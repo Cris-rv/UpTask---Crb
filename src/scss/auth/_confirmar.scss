@@ -1,0 +1,18 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+@use 'sass:color';
+
+.confirmar {
+    margin-top: 8rem;
+    .uptask {
+        @include textoDegradado($azul)
+    }
+
+    .acciones {
+        justify-content: center;
+        a {
+            color: $azul;
+            font-size: 3rem;
+        }
+    }
+}

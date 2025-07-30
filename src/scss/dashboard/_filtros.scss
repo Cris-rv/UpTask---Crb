@@ -1,0 +1,47 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+@use 'sass:color';
+
+.filtros {
+    background-color: color.adjust($blanco, $lightness: -5%);
+    margin-top: 2rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    .filtros-inputs {
+        h2 {
+            font-size: 2.8rem;
+            color: $indigo;
+            margin-bottom: 2rem;
+                @include tablet {
+                margin: 0;
+                }
+                @include desktop {
+                margin-bottom: 0;
+                margin-right: 30%;
+                }
+        }
+        @include tablet {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .campo {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include tablet {
+                margin-bottom: 0;
+                gap: 1rem;
+            }
+        }
+
+        input[type="radio"] {
+            accent-color: $indigo;
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+    }
+}

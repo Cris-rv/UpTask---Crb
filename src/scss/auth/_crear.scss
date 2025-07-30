@@ -1,0 +1,20 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+@use 'sass:color';
+
+.crear {
+    margin-top: 8rem;
+    .uptask {
+        @include textoDegradado($morado)
+    }
+
+    input[type="submit"] {
+        @include boton($morado, $blanco);
+    }
+
+    .acciones {
+        a {
+            color: $morado;
+        }
+    }
+}

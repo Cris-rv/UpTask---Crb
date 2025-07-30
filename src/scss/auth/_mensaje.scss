@@ -1,0 +1,10 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+@use 'sass:color';
+
+.mensaje {
+    margin-top: 8rem;
+    .uptask {
+        @include textoDegradado($indigo)
+    }
+}

@@ -1,0 +1,20 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+@use 'sass:color';
+
+.login {
+    margin-top: 8rem;
+    .uptask {
+        @include textoDegradado($cyan)
+    }
+
+    input[type="submit"] {
+        @include boton($cyan, $blanco);
+    }
+
+    .acciones {
+        a {
+            color: $cyan;
+        }
+    }
+}

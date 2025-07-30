@@ -1,0 +1,75 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+@use 'sass:color';
+
+.modal {
+    position: absolute;
+    background-color: rgb(0 0 0 / .8);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    .formulario {
+        max-width: 60rem;
+        background-color: $blanco;
+        padding: 2rem;
+        margin: 0 auto;
+        transform: translateY(-30rem);
+        transition-property: all; // Escucha por todas las funciones que se puedan animar
+        transition-duration: 500ms;
+        transition-timing-function: ease-in-out;
+        opacity: 0;
+        border-radius: 1rem;
+
+        h3 {
+            color: $blanco;
+            font-size: 2.8rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        legend {
+            font-size: 2rem;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            display: block;
+        }
+        input[type="text"] {
+            border: 1px solid $gris;
+            border-radius: .5rem;
+        }
+        #submit-eliminar-proyecto {
+            font-weight: bold;
+            font-size: 1.4rem;
+            @include boton($rojo, $blanco);
+        }
+        .opciones {
+            display: flex;
+            justify-content: space-between;
+        }
+        .submit-nueva-tarea {
+            @include boton($indigo, $blanco);
+        }
+        .cerrar-modal {
+            @include boton($naranja, $blanco)
+        }
+
+        &.animar {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 1;
+        }
+
+        &.cerrar {
+        transform: translateY(-200%);
+        opacity: 0;
+        }
+
+        .alerta {
+            margin: 2rem 0;
+        }
+    }
+}

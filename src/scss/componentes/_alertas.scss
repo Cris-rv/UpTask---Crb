@@ -1,0 +1,25 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+@use 'sass:color';
+
+.alerta {
+    padding: 1rem 1rem 1rem 2rem;
+    font-weight: 900;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    max-width: 100%;
+    @include tablet {
+        font-size: 1.7rem;
+    }
+    
+    &.error {
+        background-color: color.adjust($rojo, $lightness: 60%);
+        border-left: .5rem solid $rojo;
+        color: $rojo;
+    }
+    &.exito {
+        background-color: color.adjust($verde, $lightness: 60%);
+        border-left: .5rem solid $verde;
+        color: $verde;   
+    }
+}
